@@ -1,6 +1,7 @@
 const game = () => {
     let pScore = 0;
     let cScore = 0;
+    let roundScore = 0;
   
     //Start the Game
     const startGame = () => {
@@ -51,8 +52,10 @@ const game = () => {
     const updateScore = () => {
       const playerScore = document.querySelector(".player-score p");
       const computerScore = document.querySelector(".computer-score p");
+      const round = document.querySelector(".round p");
       playerScore.textContent = pScore;
       computerScore.textContent = cScore;
+      round.textContent = roundScore;
     };
   
     const compareHands = (playerChoice, computerChoice) => {
@@ -60,7 +63,9 @@ const game = () => {
       const winner = document.querySelector(".winner");
       //Checking for a tie
       if (playerChoice === computerChoice) {
-        winner.textContent = "It is a tie";
+        winner.textContent = "It's a draw";
+        roundScore++;
+        updateScore();
         return;
       }
       //Check for Rock
@@ -68,11 +73,13 @@ const game = () => {
         if (computerChoice === "scissors") {
           winner.textContent = "Player Wins";
           pScore++;
+          roundScore++;
           updateScore();
           return;
         } else {
           winner.textContent = "Computer Wins";
           cScore++;
+          roundScore++;
           updateScore();
           return;
         }
@@ -82,11 +89,13 @@ const game = () => {
         if (computerChoice === "scissors") {
           winner.textContent = "Computer Wins";
           cScore++;
+          roundScore++;
           updateScore();
           return;
         } else {
           winner.textContent = "Player Wins";
           pScore++;
+          roundScore++;
           updateScore();
           return;
         }
@@ -96,11 +105,13 @@ const game = () => {
         if (computerChoice === "rock") {
           winner.textContent = "Computer Wins";
           cScore++;
+          roundScore++;
           updateScore();
           return;
         } else {
           winner.textContent = "Player Wins";
           pScore++;
+          roundScore++;
           updateScore();
           return;
         }

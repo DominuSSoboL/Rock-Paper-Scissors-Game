@@ -6,6 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rock Paper Scissors Game</title>
     <link rel="stylesheet" href="css/style.css">
+<style>
+    /** Responsive **/
+    @media screen and (max-width: 1200px) {
+        .score h2 {
+            font-size: 25px;
+        }
+
+        .score p {
+            padding: 8px;
+            font-size: 20px;
+        }
+
+        .intro h1 {
+            font-size: 30px;
+        }
+
+        .winner {
+            font-size: 30px;
+        }
+
+        .player-hand,
+        .computer-hand {
+            max-width: 40%;
+        }
+
+        .intro button,
+        .match button {
+            width: 120px;
+            height: 40px;
+            background: none;
+            border: none;
+            color: rgb(244, 244, 244);
+            font-size: 18px;
+            text-transform: uppercase;
+            background: rgb(45, 117, 96);
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .intro button,
+        .match button {
+            width: 90px;
+            height: 30px;
+            font-size: 12px;
+            margin: 3px;
+        }
+    }
+</style>
 </head>
 <body>
     <section class="game">
@@ -14,6 +63,10 @@
                 <h2>Player</h2>
                 <p>0</p>
             </div>
+            <div class="round">
+                    <h2>Round</h2>
+                    <p>0</p>
+                </div>
             <div class="computer-score">
                 <h2>Computer</h2>
                 <p>0</p>
